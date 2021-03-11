@@ -27,6 +27,12 @@ export default {
     '@nuxtjs/stylelint-module',
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
+    // https://github.com/nuxt-community/google-fonts-module#readme
+    '@nuxtjs/google-fonts',
+    // https://github.com/nuxt-community/svg-module
+    '@nuxtjs/svg',
+    // https://github.com/nuxt-community/style-resources-module
+    '@nuxtjs/style-resources',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -40,13 +46,46 @@ export default {
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {},
 
+  // styleResources: {
+  //   scss: ['@/assets/styles/global/index.scss'],
+  // },
+  googleFonts: {
+    display: 'swap',
+    preload: true,
+    families: {
+      'Open+Sans': [400, 600, 700, 800],
+    },
+  },
+
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {
     manifest: {
-      lang: 'en',
+      lang: 'ru',
     },
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {},
-}
+  build: {
+    postcss: {
+      plugins: {
+        'postcss-nested': {},
+        'postcss-flexbugs-fixes': {},
+        'postcss-normalize': {},
+      },
+    },
+  },
+
+  // Public runtime configuration (https://nuxtjs.org/guide/runtime-config)
+  publicRuntimeConfig: {
+    // GA_ID: process.env.GA_ID || '',
+    // GTM_ID: process.env.GTM_ID || '',
+    BASE_URL: process.env.BASE_URL || '',
+  },
+
+  // Private runtime configuration (https://nuxtjs.org/guide/runtime-config)
+  privateRuntimeConfig: {
+    API_KEY: process.env.API_KEY,
+    // AUTH_DOMAIN: process.env.AUTH_DOMAIN,
+    // DATABASE_URL: process.env.DATABASE_URL,
+  },
+};
