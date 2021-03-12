@@ -1,17 +1,23 @@
 <template>
   <!-- This example requires Tailwind CSS v2.0+ -->
   <div class="flex flex-col">
-    <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
-      <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
-        <div class="border-gray-400 sm:rounded-lg">
-          <div class="bg-gray-50">
-            <VTableStock />
-
-            <!-- More items... -->
-          </div>
-        </div>
+    <div
+      class="grid grid-cols-6 gap-x-4 px-2 py-4 bg-gray-300 rounded-lg rounded-b-none"
+    >
+      <div class="col-span-2 flex items-center">
+        <div class="text-sm font-bold">Name</div>
+      </div>
+      <div class="flex items-center">
+        <div class="text-sm font-bold">Price</div>
       </div>
     </div>
+    <div class="border-l border-r border-gray-400">
+      <VTableStock />
+      <VTableStock />
+      <VTableStock />
+    </div>
+
+    <!-- More items... -->
   </div>
 </template>
 
