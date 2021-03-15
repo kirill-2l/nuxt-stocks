@@ -1,3 +1,5 @@
+import { resolve } from 'path';
+
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -73,6 +75,14 @@ export default {
         'postcss-normalize': {},
       },
     },
+  },
+
+  alias: {
+    '@components': resolve(__dirname, './components'),
+    '@plugins': resolve(__dirname, './plugins'),
+    '@images': resolve(__dirname, './assets/images'),
+    '@styles': resolve(__dirname, './assets/styles'),
+    '@static': resolve(__dirname, './static'),
   },
 
   // Public runtime configuration (https://nuxtjs.org/guide/runtime-config)
