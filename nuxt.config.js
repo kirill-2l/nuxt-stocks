@@ -16,7 +16,7 @@ export default {
   css: [],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [],
+  plugins: ['@plugins/api'],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -90,11 +90,11 @@ export default {
     // GA_ID: process.env.GA_ID || '',
     // GTM_ID: process.env.GTM_ID || '',
     BASE_URL: process.env.BASE_URL || '',
+    API_KEY: process.env.API_KEY,
   },
 
   // Private runtime configuration (https://nuxtjs.org/guide/runtime-config)
   privateRuntimeConfig: {
-    API_KEY: process.env.API_KEY,
     // AUTH_DOMAIN: process.env.AUTH_DOMAIN,
     // DATABASE_URL: process.env.DATABASE_URL,
   },
