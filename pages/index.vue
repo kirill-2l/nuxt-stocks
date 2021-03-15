@@ -9,9 +9,23 @@
 </template>
 
 <script>
-export default {};
+export default {
+  name: 'Home',
+  data() {
+    return {
+      stocks: [],
+    };
+  },
+  async fetch() {
+    this.stocks = await this.$api.$get('/stock/profile2?symbol=AAPL');
+  },
+  computed: {
+    stock() {
+      return this.$store.state.stocks;
+    },
+  },
+};
 </script>
-
 <style>
 /* Sample `apply` at-rules with Tailwind CSS
 .container {

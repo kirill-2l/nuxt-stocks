@@ -1,15 +1,15 @@
 <template>
   <!-- component -->
-  <div class="relative text-gray-600">
+  <div class="relative text-gray-600 border border-gray-400 rounded-lg">
     <input
       type="search"
       name="serch"
       placeholder="Search"
       class="bg-white h-10 px-5 pr-10 rounded-full text-sm focus:outline-none"
+      @keyup="search"
     />
     <button type="submit" class="absolute right-0 top-0 mt-3 mr-4">
       <svg
-        id="Capa_1"
         class="h-4 w-4 fill-current"
         xmlns="http://www.w3.org/2000/svg"
         xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -29,3 +29,26 @@
     </button>
   </div>
 </template>
+
+<script>
+export default {
+  name: 'VSearch',
+  data() {
+    return {
+      items: [],
+    };
+  },
+  methods: {
+    async search(e) {
+      console.log(e.target.value);
+      // requests.get('https://finnhub.io/api/v1/search?q=apple&token=c15n59748v6taen8rq5g')
+      try {
+        const res = await this.$api.$get(`/search?q=${e.target.value}`);
+        this.items = res;
+      } catch (e) {
+        console.log(e);
+      }
+    },
+  },
+};
+</script>

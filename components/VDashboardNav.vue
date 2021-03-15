@@ -21,7 +21,6 @@
             </div>
           </div>
         </div>
-        <VSearch />
         <div class="hidden md:block">
           <div class="ml-4 flex items-center md:ml-6">
             <!-- Profile dropdown -->
