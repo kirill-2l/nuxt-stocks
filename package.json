@@ -15,7 +15,7 @@
     "@nuxtjs/axios": "^5.12.5",
     "@nuxtjs/pwa": "^3.3.5",
     "axios": "^0.21.1",
-    "core-js": "^3.8.3",
+    "core-js": "^3.22.6",
     "nuxt": "^2.15.6",
     "postcss-flexbugs-fixes": "4.2.1",
     "postcss-normalize": "^9.0.0"
